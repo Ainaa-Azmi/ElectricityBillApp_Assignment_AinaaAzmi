@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground"
+    tools:context=".ViewBillActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="DETAIL INFORMATION"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textkWh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textMonth"
+        android:layout_alignEnd="@id/textMonth"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textMonth"
+        android:text="Month:" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textkWh"
+        android:text="kWh Used:" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textTotal"
+        android:text="Total Charges:" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textRebate"
+        android:text="Rebate:" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textFinal"
+        android:text="Final Cost:" />
+
+    <TextView
+        android:id="@+id/textFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textRebate"
+        android:layout_alignEnd="@id/textRebate"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textRebate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTotal"
+        android:layout_alignEnd="@id/textTotal"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textkWh"
+        android:layout_alignEnd="@id/textkWh"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="0dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="25dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textFinal"
+        android:layout_marginTop="35dp"
+        android:text="BACK" />
+
+</RelativeLayout>
