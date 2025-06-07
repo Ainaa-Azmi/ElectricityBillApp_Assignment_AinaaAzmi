@@ -47,7 +47,7 @@ public class AboutActivity extends AppCompatActivity {
         });
 
         textView10.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Ainaa-Azmi"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Ainaa-Azmi/ElectricityBillApp_Assignment_AinaaAzmi"));
             startActivity(intent);
         });
     }
