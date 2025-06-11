@@ -61,7 +61,7 @@
         android:layout_marginStart="41dp"
         android:layout_marginBottom="27dp"
         android:text="ICT602: MOBILE TECHNOLOGY AND DEVELOPMENT"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonGitHub"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -73,8 +73,9 @@
         android:text="BACK"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonGitHub" />
 
     <TextView
         android:id="@+id/textView9"
@@ -89,14 +90,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
+    <ImageButton
+        android:id="@+id/imageButtonGitHub"
+        android:layout_width="73dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="168dp"
         android:layout_marginBottom="41dp"
-        android:text="GitHub"
-        android:textColor="#0000FF"
+        android:background="@null"
+        android:contentDescription="Go to GitHub"
+        android:src="@drawable/github"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintStart_toStartOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />

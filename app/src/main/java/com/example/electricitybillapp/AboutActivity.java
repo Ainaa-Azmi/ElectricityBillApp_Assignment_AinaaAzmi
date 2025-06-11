@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,8 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AboutActivity extends AppCompatActivity {
 
-    TextView textView5, textView6, textView7, textView8, textView9, textView10;
+    TextView textView5, textView6, textView7, textView8, textView9;
     ImageView imageView;
+    ImageButton imageButtonGitHub;
     Button button4;
 
     @Override
@@ -36,7 +38,7 @@ public class AboutActivity extends AppCompatActivity {
         textView7 = findViewById(R.id.textView7);
         textView8 = findViewById(R.id.textView8);
         textView9 = findViewById(R.id.textView9);
-        textView10 = findViewById(R.id.textView10);
+        imageButtonGitHub = findViewById(R.id.imageButtonGitHub);
         imageView = findViewById(R.id.imageView);
         button4 = findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +48,7 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
-        textView10.setOnClickListener(v -> {
+        imageButtonGitHub.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Ainaa-Azmi/ElectricityBillApp_Assignment_AinaaAzmi"));
             startActivity(intent);
         });
