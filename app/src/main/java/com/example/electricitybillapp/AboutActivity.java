@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AboutActivity extends AppCompatActivity {
 
+    //declare objects
     TextView textView5, textView6, textView7, textView8, textView9;
     ImageView imageView;
     ImageButton imageButtonGitHub;
@@ -33,6 +34,7 @@ public class AboutActivity extends AppCompatActivity {
             return insets;
         });
 
+        //assign object using findViewById
         textView5 = findViewById(R.id.textView5);
         textView6 = findViewById(R.id.textView6);
         textView7 = findViewById(R.id.textView7);
@@ -48,6 +50,7 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
+        //opens the GitHub link in a browser when the imageButton GitHub icon is clicked.
         imageButtonGitHub.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Ainaa-Azmi/ElectricityBillApp_Assignment_AinaaAzmi"));
             startActivity(intent);

@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        //sets up a click listener for the FloatingActionButton Add
         binding.fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //sets up a click listener for the FloatingActionButton Info About
         binding.fabAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,11 +102,13 @@ public class MainActivity extends AppCompatActivity {
             electricityBill[cc] = cursor.getString(1).toString();
         }
 
+        //connected to the ListView in the layout using its ID.
         ListViewBills = (ListView) findViewById(R.id.listViewBills);
+        //display the month values in the ListView.
         ListViewBills.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, electricityBill));
         ListViewBills.setSelected(true);
 
-        //Create OnItemClickListener for View Info
+        //Create OnItemClickListener for open the ViewBillActivity
         ListViewBills.setOnItemClickListener((parent, view, position, id) -> {
             cursor.moveToPosition(position);
             String selectedMonth = cursor.getString(cursor.getColumnIndexOrThrow("month"));
@@ -114,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //refreshes the list to show any updated data.
         ((ArrayAdapter) ListViewBills.getAdapter()).notifyDataSetInvalidated();
     }
 }

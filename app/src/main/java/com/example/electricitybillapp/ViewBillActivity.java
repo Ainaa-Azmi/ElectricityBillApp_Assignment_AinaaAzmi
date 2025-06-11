@@ -14,9 +14,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ViewBillActivity extends AppCompatActivity {
-    // Database
+
+    // to move through the data returned from a database query
     protected Cursor cursor;
+    //to access the SQLite database using a custom helper class
     DataHelper dbHelper;
+
+    //declare variables
     TextView textMonth, textkWh, textTotal, textRebate, textFinal;
     Button button3;
 
@@ -32,12 +36,14 @@ public class ViewBillActivity extends AppCompatActivity {
         });
 
         dbHelper = new DataHelper(this);
+        //assign object using findViewById
         textMonth = findViewById(R.id.textMonth);
         textkWh = findViewById(R.id.textkWh);
         textTotal = findViewById(R.id.textTotal);
         textRebate = findViewById(R.id.textRebate);
         textFinal = findViewById(R.id.textFinal);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
+        //to select bill data from the database based on the month
         cursor = db.rawQuery("SELECT * FROM bills WHERE month = '" + getIntent().getStringExtra("month") +"'", null);
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
