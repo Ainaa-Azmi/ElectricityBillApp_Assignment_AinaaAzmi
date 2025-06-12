@@ -36,25 +36,31 @@ public class ViewBillActivity extends AppCompatActivity {
         });
 
         dbHelper = new DataHelper(this);
-        //assign object using findViewById
         textMonth = findViewById(R.id.textMonth);
         textkWh = findViewById(R.id.textkWh);
         textTotal = findViewById(R.id.textTotal);
         textRebate = findViewById(R.id.textRebate);
         textFinal = findViewById(R.id.textFinal);
+
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        //to select bill data from the database based on the month
         cursor = db.rawQuery("SELECT * FROM bills WHERE month = '" + getIntent().getStringExtra("month") +"'", null);
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             cursor.moveToPosition(0);
-            textMonth.setText(cursor.getString(1).toString());
-            textkWh.setText(cursor.getString(2).toString());
-            textTotal.setText(cursor.getString(3).toString());
-            textRebate.setText(cursor.getString(4).toString());
-            textFinal.setText(cursor.getString(5).toString());
+            textMonth.setText(cursor.getString(1));
+            textkWh.setText(cursor.getString(2));
+
+            // Format total cost and final charge to 2 decimal places
+            double totalCost = cursor.getDouble(3);
+            double rebatePercentage = cursor.getDouble(4);
+            double finalCharge = cursor.getDouble(5);
+
+            textTotal.setText(String.format("%.2f", totalCost));
+            textRebate.setText(String.format("%.0f%%", rebatePercentage));
+            textFinal.setText(String.format("%.2f", finalCharge));
         }
-        button3 = (Button) findViewById(R.id.button3);
+
+        button3 = findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
